@@ -37,7 +37,8 @@ pipeline {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: "3c9aa11c-a1cb-49e9-b8fb-8842391165a0", keyFileVariable: 'keyFile')]) {
                     sh '''
-                        ssh -i ${keyFile} $DEPLOYMENT_USER@$ADDRESS touch /tmp/testfile; touch /tmp/testfile2;
+                        ssh -i ${keyFile} $DEPLOYMENT_USER@$ADDRESS cd ~/deployments
+                        ssh -i ${keyFile} $DEPLOYMENT_USER@$ADDRESS touch /tmp/testfileindeployment
                        '''
                 }
 
