@@ -18,7 +18,7 @@ echo "***************************"
 echo "***************************"
 echo "***************************"
 
-winpty docker login -u $USERNAME -p $PASS
+docker login -u $USERNAME -p $PASS
 
 echo "***************************"
 echo "***************************"
