@@ -5,6 +5,8 @@ pipeline {
     environment {
       PASS = credentials('registry-pass')
       USERNAME = credentials('registry-user')
+      ADDRESS = credentials('remote-ip')
+      DEPLOYMENT_USER = credentials('deployment-user')
     }
 
     stages {

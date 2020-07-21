@@ -1,8 +1,5 @@
 #!/bin/bash
 
-ADDRESS=$ADDRESS
-DEPLOYMENT_USER=$DEPLOYMENT_USER
-
 echo maven-project > /tmp/.auth
 echo $BUILD_TAG >> /tmp/.auth
 echo $PASS >> /tmp/.auth
