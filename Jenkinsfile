@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
 	    steps {
    	        sh '''
+                    echo Running build $BUILD_ID
                     ./jenkins/build/mvn.sh mvn -B -DskipTests clean package
                     ./jenkins/build/build.sh
 		   '''
