@@ -4,6 +4,7 @@ pipeline {
 
     environment {
       PASS = credentials('registry-pass')
+      USERNAME = credentials('registry-user')
     }
 
     stages {
