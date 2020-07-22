@@ -6,7 +6,7 @@ package com.mycompany.app;
 public class App
 {
 
-    private final String message = "Pipeline operational.";
+    private final String message = "Pipeline operational - rebooted prod machine.";
 
     public App() {}
 
