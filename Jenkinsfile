@@ -44,6 +44,7 @@ pipeline {
                         
                         scp -i ${keyFile} /tmp/.auth $DEPLOYMENT_USER@$ADDRESS:/tmp/.auth
                         scp -i ${keyFile} ./jenkins/deploy/publish.sh $DEPLOYMENT_USER@$ADDRESS:/tmp/publish
+                        ssh -i ${keyFile} $DEPLOYMENT_USER@$ADDRESS /tmp/publish
                        '''
                 }
             }
