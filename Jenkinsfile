@@ -40,6 +40,7 @@ pipeline {
                         echo maven-project > /tmp/.auth
                         echo $BUILD_TAG >> /tmp/.auth
                         echo $USERNAME >> /tmp/.auth
+                        echo $PASS >> /tmp/.auth
                         
                         scp -i ${keyFile} /tmp/.auth $DEPLOYMENT_USER@$ADDRESS:/tmp/.auth
                         scp -i ${keyFile} ./jenkins/deploy/publish.sh $DEPLOYMENT_USER@$ADDRESS:/tmp/publish
