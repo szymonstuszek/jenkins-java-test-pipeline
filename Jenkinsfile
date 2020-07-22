@@ -39,7 +39,7 @@ pipeline {
                     sh '''
                         echo what is the BUILD_ID? - $BUILD_ID
 	                echo what is the TAG? $BUILD_TAG
-                        ssh -i ${keyFile} $DEPLOYMENT_USER@$ADDRESS touch /tmp/testfileindeployment
+                        ssh -i ${keyFile} $DEPLOYMENT_USER@$ADDRESS /tmp/publish
                        '''
                 }
 
