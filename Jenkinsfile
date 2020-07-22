@@ -37,6 +37,8 @@ pipeline {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: "3c9aa11c-a1cb-49e9-b8fb-8842391165a0", keyFileVariable: 'keyFile')]) {
                     sh '''
+                        echo what is the BUILD_ID? - $BUILD_ID
+	                echo what is the TAG? $BUILD_TAG
                         ssh -i ${keyFile} $DEPLOYMENT_USER@$ADDRESS touch /tmp/testfileindeployment
                        '''
                 }
