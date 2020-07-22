@@ -9,6 +9,7 @@ pipeline {
       DEPLOYMENT_USER = credentials('deployment-user')
       CURRENT_WORKSPACE = "${WORKSPACE1}${JOB_NAME}"
       KEY_ID = credentials('javaTestJobKey')
+      IMAGE = 'maven-project'
     }
 
     stages {
