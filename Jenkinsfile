@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Build') {
 	    steps {
-                echo 'Running job: $BUILD_TAG'
+                echo "Running job: ${BUILD_TAG}"
    	        sh '''
                     ./jenkins/build/mvn.sh mvn -B -DskipTests clean package
                     ./jenkins/build/build.sh
