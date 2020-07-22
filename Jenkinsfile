@@ -44,11 +44,16 @@ pipeline {
                         
                         scp -i ${keyFile} /tmp/.auth $DEPLOYMENT_USER@$ADDRESS:/tmp/.auth
                         scp -i ${keyFile} ./jenkins/deploy/publish.sh $DEPLOYMENT_USER@$ADDRESS:/tmp/publish
-                        ssh -i ${keyFile} $DEPLOYMENT_USER@$ADDRESS rm /tmp/.auth
                        '''
                 }
+            }
+        }
 
-                //sh './jenkins/deploy/deploy.sh'
+        stage('Cleanup') {
+            steps {
+                withCredentials([sshUserPrivateKey(credentialsId: "3c9aa11c-a1cb-49e9-b8fb-8842391165a0", keyFileVariable: 'keyFile')]) {
+                    sh 'ssh -i ${keyFile} $DEPLOYMENT_USER@$ADDRESS rm /tmp/.auth'
+                }
             }
         }
     }
