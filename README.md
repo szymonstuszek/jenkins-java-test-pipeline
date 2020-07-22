@@ -1,6 +1,6 @@
 # jenkins-java-test-pipeline
 
-Template for a Java pipeline quickstart.
+Template for a Jenkins-Java pipeline quickstart. <br/>
 My implementation of a jenkins pipeline for a java application, based on the Jenkins, from Zero To Hero: Become a DevOps Jenkins Master:
 https://www.udemy.com/course/jenkins-from-zero-to-hero
 
