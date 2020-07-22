@@ -2,7 +2,6 @@
 
 echo maven-project > /tmp/.auth
 echo $BUILD_TAG >> /tmp/.auth
-echo $PASS >> /tmp/.auth
 echo $USERNAME >> /tmp/.auth
 
 scp -i /opt/prod /tmp/.auth  $DEPLOYMENT_USER@$ADDRESS:/tmp/.auth
