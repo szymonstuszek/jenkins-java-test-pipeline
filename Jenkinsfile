@@ -8,6 +8,7 @@ pipeline {
       ADDRESS = credentials('remote-ip')
       DEPLOYMENT_USER = credentials('deployment-user')
       CURRENT_WORKSPACE = "${WORKSPACE1}${JOB_NAME}"
+      KEY_ID = credentials('javaTestJobKey')
     }
 
     stages {
@@ -35,7 +36,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: "3c9aa11c-a1cb-49e9-b8fb-8842391165a0", keyFileVariable: 'keyFile')]) {
+                withCredentials([sshUserPrivateKey(credentialsId: "${KEY_ID}", keyFileVariable: 'keyFile')]) {
                     sh '''
                         echo maven-project > /tmp/.auth
                         echo $BUILD_TAG >> /tmp/.auth
@@ -53,7 +54,7 @@ pipeline {
 
     post {
         always {
-            withCredentials([sshUserPrivateKey(credentialsId: "3c9aa11c-a1cb-49e9-b8fb-8842391165a0", keyFileVariable: 'keyFile')]) {
+            withCredentials([sshUserPrivateKey(credentialsId: "${KEY_ID}", keyFileVariable: 'keyFile')]) {
                 sh 'ssh -i ${keyFile} $DEPLOYMENT_USER@$ADDRESS rm /tmp/.auth'
             }
         }
