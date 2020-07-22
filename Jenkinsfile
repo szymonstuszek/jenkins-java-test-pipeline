@@ -10,11 +10,10 @@ pipeline {
     }
 
     stages {
-/* temp comment to test ssh
         stage('Build') {
 	    steps {
+                echo Running build $BUILD_TAG
    	        sh '''
-                    echo Running build $BUILD_ID
                     ./jenkins/build/mvn.sh mvn -B -DskipTests clean package
                     ./jenkins/build/build.sh
 		   '''
@@ -32,7 +31,7 @@ pipeline {
                 sh './jenkins/push/push.sh'
             }
         }
-*/
+
         stage('Deploy') {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: "3c9aa11c-a1cb-49e9-b8fb-8842391165a0", keyFileVariable: 'keyFile')]) {
