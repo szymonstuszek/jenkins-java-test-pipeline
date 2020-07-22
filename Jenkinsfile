@@ -39,6 +39,7 @@ pipeline {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: "${KEY_ID}", keyFileVariable: 'keyFile')]) {
                     sh '''
+                        sleep 5
                         echo maven-project > /tmp/.auth
                         echo $BUILD_TAG >> /tmp/.auth
                         echo $USERNAME >> /tmp/.auth
