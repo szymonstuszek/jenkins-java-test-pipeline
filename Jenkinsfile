@@ -7,6 +7,7 @@ pipeline {
       USERNAME = credentials('registry-user')
       ADDRESS = credentials('remote-ip')
       DEPLOYMENT_USER = credentials('deployment-user')
+      CURRENT_WORKSPACE=$WORKSPACE1$JOB_NAME
     }
 
     stages {
