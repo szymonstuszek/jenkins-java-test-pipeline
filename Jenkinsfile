@@ -40,10 +40,9 @@ pipeline {
                         echo maven-project > /tmp/.auth
                         echo $BUILD_TAG >> /tmp/.auth
                         echo $USERNAME >> /tmp/.auth
-                        echo My new improved variables >> /tmp/.auth
-                        echo what is the BUILD_ID? - $BUILD_ID
-	                echo what is the TAG? $BUILD_TAG
+                        
                         scp -i ${keyFile} /tmp/.auth $DEPLOYMENT_USER@$ADDRESS:/tmp/.auth
+                        scp -i ${keyFile} ./jenkins/deploy/publish.sh $DEPLOYMENT_USER@$ADDRESS:/tmp/publish
                         ssh -i ${keyFile} $DEPLOYMENT_USER@$ADDRESS /tmp/publish
                        '''
                 }
