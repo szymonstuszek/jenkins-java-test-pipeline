@@ -4,21 +4,23 @@ Template for a Jenkins-Java pipeline. <br/>
 My implementation is based on the course: Jenkins, from Zero To Hero: Become a DevOps Jenkins Master:
 https://www.udemy.com/course/jenkins-from-zero-to-hero <br/>
 
-With a few changes to make 
+I have made a couple of changes to make the project more concise and easier to reuse. <br/>
+Can be used as a reference for setting up a CI/CD environment. <br/>
 
-Workflow of the pipeline
-
-Notes:
-
-
-
-
+## Workflow of the pipeline
+The pipeline consists of several stages:
+- checking out the codebase
+- building a docker image
+- running tests
+- pushing the image to dockerhub
+- deploying the app on a remote server, by pulling the image and running docker-compose
 
 ![alt text](https://github.com/szymonstuszek/Tic-Tac-Toe/blob/master/src/main/resources/screens/tic2.PNG)
 ![alt text](https://github.com/szymonstuszek/Tic-Tac-Toe/blob/master/src/main/resources/screens/tic3.PNG)
 
 
 ## Setup
+The setup for a pipeline can be configured in many ways.
 
 
 ## Technologies
@@ -26,6 +28,7 @@ Notes:
  - Jenkins
  - Maven
  - Docker
+ - Docker-Compose
  - Bash
  - AWS
  
