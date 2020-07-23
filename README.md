@@ -15,7 +15,7 @@ The pipeline consists of several stages:
 - pushing the image to dockerhub
 - deploying the app on a remote server, by pulling the image and running docker-compose
 
-![alt text](https://github.com/szymonstuszek/Tic-Tac-Toe/blob/master/src/main/resources/screens/tic2.PNG)
+![alt text](https://github.com/szymonstuszek/jenkins-java-test-pipeline/blob/master/jenkins.PNG)
 
 
 
