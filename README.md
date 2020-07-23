@@ -9,14 +9,14 @@ Can be used as a reference for setting up a CI/CD environment. <br/>
 
 ## Workflow of the pipeline
 The pipeline consists of several stages:
-- checking out the codebase
+- cloning the codebase
 - building a docker image
 - running tests
 - pushing the image to dockerhub
 - deploying the app on a remote server, by pulling the image and running docker-compose
 
 ![alt text](https://github.com/szymonstuszek/Tic-Tac-Toe/blob/master/src/main/resources/screens/tic2.PNG)
-![alt text](https://github.com/szymonstuszek/Tic-Tac-Toe/blob/master/src/main/resources/screens/tic3.PNG)
+
 
 
 ## Setup
